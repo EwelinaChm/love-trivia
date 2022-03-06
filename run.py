@@ -14,3 +14,12 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('scores')
 
 
+def intro_message():
+    print("Welcome to LOVE TRIVIA game! \nAre you ready to test your knowledge?")
+    print("There are a total of 20 questions, you can skip a question anytime by typing 'skip', you have 3 attempts to give a correct answer")
+    input("Press any key to start the game")
+    return True 
+
+
+intro = intro_message()
+print(intro)

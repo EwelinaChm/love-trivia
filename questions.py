@@ -1,6 +1,6 @@
 quiz = {
     1 : {
-        "question" : "What does = 'www' stand for in a website browser?",
+        "question" : "What does 'www' stand for in a website browser?",
         "answer" : "World Wide Web"
     },
     2 : {
