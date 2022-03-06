@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from questions import quiz
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -12,6 +13,4 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('scores')
 
-scores = SHEET.worksheet('scores')
-data = scores.get_all_values()
-print(data)
+
