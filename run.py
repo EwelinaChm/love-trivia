@@ -16,8 +16,8 @@ SHEET = GSPREAD_CLIENT.open('scores')
 
 def intro_message():
     print("Welcome to LOVE TRIVIA game! \nAre you ready to test your knowledge?")
-    print("There are a total of 20 questions, you can skip a question anytime by typing 'skip', you have 2 attempts to give a correct answer")
-    input("Press any key to start the game")
+    print("There is a total number of 20 questions. \nYou can skip a question anytime by typing 'skip'. \nYou have 2 attempts to give a correct answer")
+    input(f"Press Enter to start the game")
     return True 
 
 
@@ -47,6 +47,9 @@ def play_game():
                 attempts -= 1
             
         break
+    
+    name = input("Your name: ")
+    print(f"Thank you for playing, {name}.\n")
     print(f"Your final score is {score}!\n\n")
 
 intro = intro_message()
