@@ -22,7 +22,7 @@ def intro_message():
 
 
 def check_answer(question, answer, attempts, score):
-    if quiz[question]['answer'].lower() == ans.lower():
+    if quiz[question]['answer'].lower() == answer.lower():
         print(f"Correct Answer! \nYour score is {score + 1}!")
         return True
     else:
@@ -30,19 +30,24 @@ def check_answer(question, answer, attempts, score):
         return False
 
 
+def play_game():
+    while True:
+        score = 0
+        for question in quiz:
+            attempts = 2
+            while attempts > 0:
+                print(quiz[question]['question'])
+                answer = input("Your answer: ")
+                if answer == "skip":
+                    break
+                check = check_answer(question, answer, attempts, score)
+                if check:
+                    score += 1
+                    break
+                attempts -= 1
+            
+        break
+    print(f"Your final score is {score}!\n\n")
+
 intro = intro_message()
-while True:
-    score = 0
-    for question in quiz:
-        attempts = 2
-        while attempts > 0:
-            print(quiz[question]['question'])
-            answer = input("Your answer: ")
-            if answer == "skip":
-                break
-            check = check_answer(question, answer, attempts, score)
-            if check:
-                score += 1
-                break
-            attempts -= 1
-    break
+play_game()
